@@ -6,8 +6,8 @@ require 'base64'
 require 'open-uri'
 include SendGrid
 
-
-CSV.foreach("../AndrewYoung.csv") do |row|
+#ARGV[0] takes the file path
+CSV.foreach(ARGV[0]) do |row|
 
   from = Email.new(email: 'ebairagi1@student.gsu.edu')
   to = Email.new(email: "#{row[0]}")
